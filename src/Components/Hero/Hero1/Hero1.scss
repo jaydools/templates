@@ -1,0 +1,36 @@
+@use "../../../Style/mixins" as *;
+@use "../../../Style/variables"  as *; 
+
+.leftside {
+    margin: 0 1rem 1rem 1rem;
+    padding: 1rem;
+
+    &__header {
+        @include mobileH1;
+    }
+
+    &__body {
+        @include mobileH3;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: flex-start;
+        
+        &--click {
+            background-color: white;
+            border: 3px solid $MainColour;
+            color: $MainColour;
+            padding: 1rem 4rem 1rem 4rem;
+        }
+    }
+}
+
+.rightside {
+    padding: 2rem;
+
+    &__img {
+        width: 100%
+    }
+}
+
