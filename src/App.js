@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { useState } from 'react';
 import './App.css';
 import Hero from "./Components/Hero/Hero"
@@ -11,28 +11,9 @@ function App() {
 
     return (
         <BrowserRouter>
-            <Switch>
-                <Route path="/" exact>
-                {/* The homepage where users can select templates */}
-                    <Header
-                        selectedTemplate={selectedNavBar}
-                        onTemplateSelect={setSelectedNavBar}
-                    />
-                    <Hero
-                        selectedTemplate={selectedHero}
-                        onTemplateSelect={setSelectedHero}
-                    />
-                </Route>
-                <Route path="/nav/:templateId">
-                {/* Individual navigation bar template preview */}
-                    <Header />
-                </Route>
-
-                <Route path="/hero/:templateId">
-            {/* Individual hero section template preview */}
-                    <Hero />
-                </Route>
-            </Switch>
+            <Header selectedTemplate={selectedNavBar} onTemplateSelect={setSelectedNavBar} />
+            <Hero selectedTemplate={selectedHero} onTemplateSelect={setSelectedHero} />
+            {/* Add more template components here */}
         </BrowserRouter>
   );
 }

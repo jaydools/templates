@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Hero.scss"
 import Hero1 from "./Hero1/Hero1"
-import Hero2 from "./Hero1/Hero2"
-import Hero3 from "./Hero1/Hero3"
+import Hero2 from "./Hero2/Hero2"
+import Hero3 from "./Hero3/Hero3"
 // import more templates
 
 function Hero({ selectedHero, setSelectedHero }) {
@@ -17,7 +17,7 @@ function Hero({ selectedHero, setSelectedHero }) {
         setCurrentTemplateIndex((currentTemplateIndex - 1 + templates.length) % templates.length);
     };
 
-    const renderHeroTemplate = () => {
+    const renderHeroTemplate = () => {                          // used to render the selected template component dynamically
         const Template = templates[currentTemplateIndex];
         return <Template />;
     };
@@ -28,8 +28,8 @@ function Hero({ selectedHero, setSelectedHero }) {
                 {renderHeroTemplate()}
             </div>
             <div className="button-container">
-                <button onClick={previousTemplate}>Previous</button>
-                <button onClick={nextTemplate}>Next</button>
+                <button className='button-container__left' onClick={previousTemplate}>Previous</button>
+                <button className='button-container__left' onClick={nextTemplate}>Next</button>
             </div>
         </div>
     )
