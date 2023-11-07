@@ -1,0 +1,71 @@
+@use "../../../Style/mixins" as *;
+@use "../../../Style/variables"  as *; 
+
+.hero-container {
+    @include desktop {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+}
+
+.rightside {
+    margin: 0 1rem 1rem 1rem;
+    padding: 0 1rem 1rem 1rem;
+
+    @include tablet {
+        padding-top: 0;
+    }
+
+    @include desktop {
+        padding-left: 2rem;
+        margin-top: 5rem;    }
+
+    &__header {
+        @include mobileH1;
+    }
+
+    &__body {
+        @include mobileH3;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: flex-start;
+        
+        &--click {
+            background-color: white;
+            border: 3px solid $MainColour;
+            color: $MainColour;
+            padding: 1rem 4rem 1rem 4rem;
+        }
+    }
+}
+
+.leftside {
+    padding: 2rem;
+    
+    @include tablet {
+        display: flex;
+        justify-content: center;
+    }
+
+    @include desktop {
+        justify-content: flex-end;
+    }
+
+    &__img {
+        width: 100%;
+        border: 5px solid $MainColour;
+
+        @include tablet {
+            width: 70%;
+        }
+
+        @include desktop {
+            width: 80%;
+
+        }
+    }
+}
+
